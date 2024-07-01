@@ -21,6 +21,10 @@ class Client
 			$headers["X-Api-Key"] = $this->options->apiKey;
 		}
 
+		if ($this->options->userAgent) {
+			$headers["User-Agent"] = $this->options->userAgent;
+		}
+
 		try {
 			$response = $this->httpClient->request(
 				'GET',
