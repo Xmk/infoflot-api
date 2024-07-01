@@ -15,7 +15,9 @@ class Client
 
 	public function request(string $url = '', array $params = [])
 	{
-		$headers = [];
+		$headers = [
+			'Content-Type' => 'application/json; charset=utf-8',
+		];
 
 		if ($this->options->apiKey) {
 			$headers["X-Api-Key"] = $this->options->apiKey;
