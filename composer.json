@@ -1,0 +1,27 @@
+{
+    "name": "cryptoweb/infoflot-api",
+    "description": "PHP Client for Infoflot REST API",
+    "keywords": [
+        "php",
+        "infoflot"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CryptoWeb\\InfoflotApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Xmk",
+            "email": "i@ars-team.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.0 | ^7.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
