@@ -2,7 +2,7 @@
 
 namespace CryptoWeb\InfoflotApi\Contracts;
 
-interface MethodInterface
+interface BuilderInterface
 {
 	public function get(): array;
 }

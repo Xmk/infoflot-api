@@ -2,12 +2,11 @@
 
 namespace CryptoWeb\InfoflotApi;
 
-use CryptoWeb\InfoflotApi\Contracts\MethodInterface;
-use CryptoWeb\InfoflotApi\Exceptions\MethodArgumentNotAvailable;
-use CryptoWeb\InfoflotApi\Exceptions\MethodParamNotAvailable;
-use CryptoWeb\InfoflotApi\Exceptions\MethodParamNotValue;
+use CryptoWeb\InfoflotApi\Contracts\BuilderInterface;
+use CryptoWeb\InfoflotApi\Exceptions\BuilderParamNotAvailable;
+use CryptoWeb\InfoflotApi\Exceptions\BuilderParamNotValue;
 
-abstract class Method implements MethodInterface
+abstract class Builder implements BuilderInterface
 {
 	protected $urn = '';
 	protected $available_arguments = [];
@@ -29,12 +28,12 @@ abstract class Method implements MethodInterface
 	{
 		if (! method_exists(get_called_class(), $name)) {
 			if (empty($arguments)) {
-				throw new MethodParamNotValue("Method param {$name} require value");
+				throw new BuilderParamNotValue("Builder param {$name} require value");
 			}
 			$this->query_params[$name] = $arguments[0];
 			return $this;
 		}
-		throw new MethodParamNotAvailable("Method param {$name} not available");
+		throw new BuilderParamNotAvailable("Builder param {$name} not available");
 	}
 
 	protected function matchArgumentsFromUrl()
