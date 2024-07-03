@@ -1,9 +1,14 @@
 # infloflot-api
 
+## ATTENTION!
+
+⚠️ This package is at an early stage of development!
+
+### basic docs:
+
 basic docs:
 
 https://restapi.infoflot.com/docs
-
 
 ## Installation
 
