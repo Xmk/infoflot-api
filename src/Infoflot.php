@@ -46,7 +46,7 @@ class Infoflot
 		protected Client $client
 	) {}
 
-	public function cities($id = null): BuilderInterface
+	public function cities(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CitiesId($this->client))->id($id);
@@ -55,7 +55,7 @@ class Infoflot
 		}
 	}
 
-	public function citiesDepartures($id = null): BuilderInterface
+	public function citiesDepartures(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CitiesDeparturesId($this->client))->id($id);
@@ -64,7 +64,7 @@ class Infoflot
 		}
 	}
 
-	public function citiesInRoutes($id = null): BuilderInterface
+	public function citiesInRoutes(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CitiesInRoutesId($this->client))->id($id);
@@ -73,7 +73,7 @@ class Infoflot
 		}
 	}
 
-	public function cruises($id = null): BuilderInterface
+	public function cruises(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CruisesId($this->client))->id($id);
@@ -82,7 +82,7 @@ class Infoflot
 		}
 	}
 
-	public function onboardServices($id = null): BuilderInterface
+	public function onboardServices(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new OnboardServicesId($this->client))->id($id);
@@ -91,7 +91,7 @@ class Infoflot
 		}
 	}
 
-	public function publicPlaces($id): BuilderInterface
+	public function publicPlaces(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new PublicPlacesId($this->client))->id($id);
@@ -100,7 +100,7 @@ class Infoflot
 		}
 	}
 
-	public function rivers($id): BuilderInterface
+	public function rivers(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new RiversId($this->client))->id($id);
@@ -109,7 +109,7 @@ class Infoflot
 		}
 	}
 
-	public function ports($id): BuilderInterface
+	public function ports(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new PortsId($this->client))->id($id);
@@ -118,7 +118,7 @@ class Infoflot
 		}
 	}
 
-	public function countries($id): BuilderInterface
+	public function countries(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CountriesId($this->client))->id($id);
@@ -127,7 +127,7 @@ class Infoflot
 		}
 	}
 
-	public function citizenships($id): BuilderInterface
+	public function citizenships(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CitizenshipsId($this->client))->id($id);
@@ -136,7 +136,7 @@ class Infoflot
 		}
 	}
 
-	public function currencies($id): BuilderInterface
+	public function currencies(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new CurrenciesId($this->client))->id($id);
@@ -145,7 +145,7 @@ class Infoflot
 		}
 	}
 
-	public function regions($id): BuilderInterface
+	public function regions(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new RegionsId($this->client))->id($id);
@@ -154,14 +154,14 @@ class Infoflot
 		}
 	}
 
-	public function reservation(int|string $cruiseId, string $startDate): BuilderInterface
+	public function reservation(int $cruiseId, string $startDate): BuilderInterface
 	{
 		return (new Reservation($this->client))
 			->cruiseId($cruiseId)
 			->startDate($startDate);
 	}
 
-	public function news($id): BuilderInterface
+	public function news(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new NewsId($this->client))->id($id);
@@ -179,7 +179,7 @@ class Infoflot
 		}
 	}
 
-	public function shipsActive(int|string|null $id): BuilderInterface
+	public function shipsActive(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new ShipsActiveId($this->client))->id($id);
@@ -188,13 +188,13 @@ class Infoflot
 		}
 	}
 
-	public function shipsMenu(int|string|null $id): BuilderInterface
+	public function shipsMenu(?int $id = null): BuilderInterface
 	{
 		return new ShipsMenu($this->client);
 	}
 
 
-	public function popularRoutes(int|string|null $id): BuilderInterface
+	public function popularRoutes(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new PopularRoutesId($this->client))->id($id);
@@ -203,7 +203,7 @@ class Infoflot
 		}
 	}
 
-	public function requests(int|string|null $id): BuilderInterface
+	public function requests(?int $id = null): BuilderInterface
 	{
 		if ($id) {
 			return (new RequestsId($this->client))->id($id);
