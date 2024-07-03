@@ -59,11 +59,15 @@ abstract class Builder implements BuilderInterface
 	protected function buildParams()
 	{
 		foreach ($this->available_arguments as $name) {
-			$this->arguments[":{$name}"] = $this->query_params[$name];
+			if (isset($this->query_params[$name])) {
+				$this->arguments[":{$name}"] = $this->query_params[$name];
+			}
 		}
 
 		foreach ($this->available_params as $name) {
-			$this->params[$name] = $this->query_params[$name];
+			if (isset($this->query_params[$name])) {
+				$this->params[$name] = $this->query_params[$name];
+			}
 		}
 
 		return $this;
