@@ -82,7 +82,7 @@ abstract class Builder implements BuilderInterface
 	protected function getResult()
 	{
 		return $this->extractArguments()
-					->buildParams();
+					->buildParams()
 					->client
 					->request($this->getUrn(), $this->getParams());
 	}
