@@ -5,7 +5,15 @@ basic docs:
 https://restapi.infoflot.com/docs
 
 
-## client initialization
+## Installation
+
+```bash
+composer require cryptoweb/infoflot-api
+```
+
+## Usage
+
+### client initialization
 ```php
 require 'vendor/autoload.php';
 
@@ -20,12 +28,12 @@ $client = new Client(
 );
 ```
 
-## usage basic
+### usage basic
 ```php
 $result = $client->request('cruises', ['id' => 123]);
 ```
 
-## builders
+### builders
 ```php
 use CryptoWeb\InfoflotApi\Builders\Cruises;
 use CryptoWeb\InfoflotApi\Builders\CruisesId;
@@ -55,7 +63,7 @@ $cruiseCabinsResult = (new CruisesIdCabins($client))
 // etc.
 ```
 
-## factory
+### factory
 ```php
 use CryptoWeb\InfoflotApi\Infoflot;
 
@@ -79,3 +87,7 @@ $infoflot->cruises(100500)
 
 // etc.
 ```
+
+## License
+
+The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
