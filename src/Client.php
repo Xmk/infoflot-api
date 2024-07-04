@@ -4,6 +4,7 @@ namespace CryptoWeb\InfoflotApi;
 
 use CryptoWeb\InfoflotApi\Exceptions\ClientException;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\json_decode;
 use Psr\Http\Client\ClientExceptionInterface;
 
 class Client
@@ -13,7 +14,7 @@ class Client
 		private readonly ClientOptions $options
 	) {}
 
-	public function request(string $url = '', array $params = [])
+	public function request(string $urn = '', array $params = [])
 	{
 		$headers = [
 			'Content-Type' => 'application/json; charset=utf-8',
@@ -28,14 +29,11 @@ class Client
 		}
 
 		try {
-			$response = $this->httpClient->request(
-				'GET',
-				$this->options->baseUri . '/' . $url,
-				[
-					'headers' => $headers,
-					'query'=> $params,
-				]
-			);
+			$response = $this->httpClient->request('GET', $urn, [
+				'base_uri' => $this->options->baseUri,
+				'headers' => $headers,
+				'query'=> $params,
+			]);
 
 			$statusCode = $response->getStatusCode();
 
