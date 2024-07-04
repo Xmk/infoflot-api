@@ -3,7 +3,9 @@
     "description": "PHP Client for Infoflot REST API",
     "keywords": [
         "php",
-        "infoflot"
+        "infoflot",
+        "api",
+        "sdk"
     ],
     "type": "library",
     "license": "MIT",
