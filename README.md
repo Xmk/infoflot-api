@@ -34,48 +34,15 @@ $client = new Client(
 );
 ```
 
-### usage basic
-```php
-$result = $client->request('cruises', ['id' => 123]);
-```
-
-### builders
-```php
-use CryptoWeb\InfoflotApi\Builders\Cruises;
-use CryptoWeb\InfoflotApi\Builders\CruisesId;
-use CryptoWeb\InfoflotApi\Builders\CruisesIdCabins;
-use CryptoWeb\InfoflotApi\Builders\CruisesIdCabinsSearch;
-
-// get all cruises
-$cruisesBuilder = new Cruises($client);
-$cruisesBuilder->nights(5);
-$cruisesResult = $cruisesBuilder->get();
-
-// or
-$cruisesResult = (new Cruises($client))
-	->nights(5)
-	->get();
-
-// get cruise by id
-$cruiseBuilder = new CitiesId($client);
-$cruiseBuilder->id(123);
-$cruiseResult = $cruiseBuilder->get();
-
-// get cruise cabins by id
-$cruiseCabinsResult = (new CruisesIdCabins($client))
-	->id(123)
-	->get();
-
-// etc.
-```
-
 ### factory
 ```php
+use CryptoWeb\InfoflotApi\Enums\ShipTypeAsOnMainSiteEnum;
 use CryptoWeb\InfoflotApi\Infoflot;
 
 $infoflot = new Infoflot($client);
 
 $infoflot->cruises()
+	->type(ShipTypeAsOnMainSiteEnum::TURKISH_RIVERA)
 	->nights(5)
 	->get();
 
@@ -91,7 +58,48 @@ $infoflot->cruises(100500)
 	->search()
 	->get();
 
-// etc.
+// etc...
+```
+
+### builders
+```php
+use CryptoWeb\InfoflotApi\Builders\Cruises;
+use CryptoWeb\InfoflotApi\Builders\CruisesId;
+use CryptoWeb\InfoflotApi\Builders\CruisesIdCabins;
+use CryptoWeb\InfoflotApi\Builders\CruisesIdCabinsSearch;
+use CryptoWeb\InfoflotApi\Enums\CruiseTypeEnum;
+
+// get all cruises
+$cruisesBuilder = new Cruises($client);
+$cruisesBuilder->type(CruiseTypeEnum::RIVER)
+$cruisesBuilder->nights(5);
+$cruisesResult = $cruisesBuilder->get();
+
+// or
+$cruisesResult = (new Cruises($client))
+	->type(CruiseTypeEnum::SEA)
+	->nights(5, 6, 7)
+	->get();
+
+// get cruise by id
+$cruiseBuilder = new CitiesId($client);
+$cruiseBuilder->id(311);
+$cruiseResult = $cruiseBuilder->get();
+
+// get cruise cabins by id
+$cruiseCabinsResult = (new CruisesIdCabins($client))
+	->id(311)
+	->get();
+
+// etc...
+```
+
+### usage basic
+```php
+$result = $client->request('cruises', [
+	'ship' => '311,312,400',
+	'type' => 'sea'
+]);
 ```
 
 ## License
