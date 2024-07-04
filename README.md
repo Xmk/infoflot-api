@@ -9,8 +9,6 @@
 
 ### basic docs:
 
-basic docs:
-
 https://restapi.infoflot.com/docs
 
 ## Installation
