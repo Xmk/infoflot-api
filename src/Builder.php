@@ -30,7 +30,7 @@ abstract class Builder implements BuilderInterface
 			if (empty($arguments)) {
 				throw new BuilderParamNotValue("Builder param {$name} require value");
 			}
-			$this->query_params[$name] = $arguments[0];
+			$this->query_params[$name] = count($arguments) > 1 ? join(',', $arguments) : $arguments[0];
 			return $this;
 		}
 		throw new BuilderParamNotAvailable("Builder param {$name} not available");
