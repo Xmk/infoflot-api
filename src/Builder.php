@@ -28,11 +28,19 @@ abstract class Builder implements BuilderInterface
 	{
 		if (! method_exists(get_called_class(), $name)) {
 			if (empty($arguments)) {
-				throw new BuilderParamNotValue("Builder param {$name} require value");
+				throw new BuilderParamNotValue("Builder param {$name} require minimum one value");
 			}
-			$this->query_params[$name] = count($arguments) > 1 ? join(',', $arguments) : $arguments[0];
+
+			$arguments = array_map(
+				fn ($arg) => $arg instanceof \UnitEnum ? $arg->value : trim($arg),
+				$arguments
+			);
+
+			$this->query_params[$name] = 1 < count($arguments) ? join(',', $arguments) : $arguments[0];
+
 			return $this;
 		}
+
 		throw new BuilderParamNotAvailable("Builder param {$name} not available");
 	}
 
