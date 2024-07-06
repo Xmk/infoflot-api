@@ -8,8 +8,8 @@ final class ClientOptions
 	public const USERAGENT = "php-infoflot-client/php-" . PHP_VERSION;
 
 	public function __construct(
-		public readonly string $baseUri = self::BASE_URL,
 		public readonly ?string $apiKey = null,
+		public readonly string $baseUri = self::BASE_URL,
 		public readonly string $userAgent = self::USERAGENT,
 	) {}
 }
