@@ -188,7 +188,7 @@ class Infoflot
 		}
 	}
 
-	public function shipsMenu(?int $id = null): BuilderInterface
+	public function shipsMenu(): BuilderInterface
 	{
 		return new ShipsMenu($this->client);
 	}
