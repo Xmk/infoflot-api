@@ -3,7 +3,7 @@
 namespace CryptoWeb\InfoflotApi\Builders;
 
 use CryptoWeb\InfoflotApi\Contracts\BuilderInterface;
-use CryptoWeb\InfoflotApi\Enums\Operation;
+use CryptoWeb\InfoflotApi\Enums\OperationEnum;
 use CryptoWeb\InfoflotApi\Builder;
 
 class Ships extends Builder
@@ -14,12 +14,13 @@ class Ships extends Builder
 		'page',
 	];
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/ships-additional-id-operation
+	 */
 	public function additional(int|string $id, string|OperationEnum $operation): BuilderInterface
 	{
-		$operationValue = $operation instanceof \UnitEnum ? $operation->value : $operation;
-
 		return (new ShipsAdditionalIdOperation($this->client))
 			->id($id)
-			->operation($operationValue);
+			->operation($operation);
 	}
 }
