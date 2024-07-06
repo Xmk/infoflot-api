@@ -40,7 +40,7 @@ use CryptoWeb\InfoflotApi\Builders\ShipsActiveId;
 use CryptoWeb\InfoflotApi\Builders\ShipsId;
 use CryptoWeb\InfoflotApi\Builders\ShipsMenu;
 
-class Infoflot
+class Factory
 {
 	public function __construct(
 		protected Client $client

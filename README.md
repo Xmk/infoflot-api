@@ -37,9 +37,9 @@ $client = new Client(
 ### factory
 ```php
 use CryptoWeb\InfoflotApi\Enums\ShipTypeAsOnMainSiteEnum;
-use CryptoWeb\InfoflotApi\Infoflot;
+use CryptoWeb\InfoflotApi\Factory;
 
-$infoflot = new Infoflot($client);
+$infoflot = new Factory($client);
 
 $infoflot->cruises()
 	->type(ShipTypeAsOnMainSiteEnum::TURKISH_RIVERA)
