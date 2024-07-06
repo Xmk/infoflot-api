@@ -46,6 +46,10 @@ class Factory
 		protected Client $client
 	) {}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/cities
+	 * @see https://restapi.infoflot.com/docs/cities-id
+	 */
 	public function cities(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -55,6 +59,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/cities-departures
+	 * @see https://restapi.infoflot.com/docs/cities-departures-id
+	 */
 	public function citiesDepartures(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -64,6 +72,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/cities-in-routes
+	 * @see https://restapi.infoflot.com/docs/cities-in-routes-id
+	 */
 	public function citiesInRoutes(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -73,6 +85,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/cruises
+	 * @see https://restapi.infoflot.com/docs/cruises-id
+	 */
 	public function cruises(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -82,6 +98,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/onboard-services
+	 * @see https://restapi.infoflot.com/docs/onboard-services-id
+	 */
 	public function onboardServices(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -91,6 +111,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/public-places
+	 * @see https://restapi.infoflot.com/docs/public-places-id
+	 */
 	public function publicPlaces(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -100,6 +124,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/rivers
+	 * @see https://restapi.infoflot.com/docs/rivers-id
+	 */
 	public function rivers(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -109,6 +137,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/ports
+	 * @see https://restapi.infoflot.com/docs/ports-id
+	 */
 	public function ports(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -118,6 +150,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/countries
+	 * @see https://restapi.infoflot.com/docs/countries-id
+	 */
 	public function countries(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -127,6 +163,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/citizenships
+	 * @see https://restapi.infoflot.com/docs/citizenships-id
+	 */
 	public function citizenships(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -136,6 +176,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/currencies
+	 * @see https://restapi.infoflot.com/docs/currencies-id
+	 */
 	public function currencies(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -145,6 +189,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/regions
+	 * @see https://restapi.infoflot.com/docs/regions-id
+	 */
 	public function regions(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -154,6 +202,9 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/reservation-cruiseId-startDate
+	 */
 	public function reservation(int $cruiseId, string $startDate): BuilderInterface
 	{
 		return (new Reservation($this->client))
@@ -161,6 +212,10 @@ class Factory
 			->startDate($startDate);
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/news
+	 * @see https://restapi.infoflot.com/docs/news-id
+	 */
 	public function news(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -170,6 +225,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/ships
+	 * @see https://restapi.infoflot.com/docs/ships-id
+	 */
 	public function ships(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -179,6 +238,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/ships-active
+	 * @see https://restapi.infoflot.com/docs/ships-active-id
+	 */
 	public function shipsActive(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -188,12 +251,18 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/ships-menu
+	 */
 	public function shipsMenu(): BuilderInterface
 	{
 		return new ShipsMenu($this->client);
 	}
 
-
+	/**
+	 * @see https://restapi.infoflot.com/docs/popular-routes
+	 * @see https://restapi.infoflot.com/docs/popular-routes-id
+	 */
 	public function popularRoutes(?int $id = null): BuilderInterface
 	{
 		if ($id) {
@@ -203,6 +272,10 @@ class Factory
 		}
 	}
 
+	/**
+	 * @see https://restapi.infoflot.com/docs/requests
+	 * @see https://restapi.infoflot.com/docs/requests-id
+	 */
 	public function requests(?int $id = null): BuilderInterface
 	{
 		if ($id) {
