@@ -17,6 +17,10 @@ https://restapi.infoflot.com/docs
 composer require cryptoweb/infoflot-api
 ```
 
+## Integration
+We have package for simple integration with Laravel:
+[cryptoweb/infoflot-laravel](https://packagist.org/packages/cryptoweb/infoflot-laravel)
+
 ## Usage
 
 ### client initialization
