@@ -1,15 +1,15 @@
-# infloflot-api
+[![Latest Version](https://img.shields.io/packagist/v/cryptoweb/infoflot-api?style=for-the-badge)](https://packagist.org/packages/cryptoweb/infoflot-api)
+[![License](https://img.shields.io/packagist/l/cryptoweb/infoflot-api?style=for-the-badge)](https://packagist.org/packages/cryptoweb/infoflot-api)
 
-[![Latest Version](https://img.shields.io/packagist/v/cryptoweb/infoflot-api)](https://packagist.org/packages/cryptoweb/infoflot-api)
-[![License](https://img.shields.io/packagist/l/cryptoweb/infoflot-api)](https://packagist.org/packages/cryptoweb/infoflot-api)
+> [!WARNING]
+>
+> This package is at an early stage of development!
 
-## ATTENTION!
+## Description
 
-⚠️ This package is at an early stage of development!
-
-### basic docs:
-
-https://restapi.infoflot.com/docs
+> [!NOTE]
+>
+> Basic documentation: https://restapi.infoflot.com/docs
 
 ## Installation
 
