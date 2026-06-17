@@ -15,7 +15,7 @@ class Client
     ) {
     }
 
-    public function request(string $urn = '', array $params = [])
+    public function request(string $urn = '', array $params = [], string $method = 'GET')
     {
         $headers = [
             'Content-Type' => 'application/json; charset=utf-8',
@@ -30,7 +30,7 @@ class Client
         }
 
         try {
-            $response = $this->httpClient->request('GET', $urn, [
+            $response = $this->httpClient->request($method, $urn, [
                 'base_uri' => $this->options->baseUri,
                 'headers' => $headers,
                 'query' => $params,
