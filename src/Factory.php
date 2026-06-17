@@ -320,6 +320,10 @@ class Factory
         }
     }
 
+    /**
+     * @see https://restapi.infoflot.com/docs/suggestions
+     * @see https://restapi.infoflot.com/docs/suggestions-id
+     */
     public function suggestions(?int $id = null): BuilderInterface
     {
         if (is_null($id)) {
