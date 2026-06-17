@@ -18,6 +18,7 @@ use CryptoWeb\InfoflotApi\Builders\Currencies;
 use CryptoWeb\InfoflotApi\Builders\CurrenciesId;
 use CryptoWeb\InfoflotApi\Builders\Discounts;
 use CryptoWeb\InfoflotApi\Builders\DiscountsId;
+use CryptoWeb\InfoflotApi\Builders\IdTypes;
 use CryptoWeb\InfoflotApi\Builders\News;
 use CryptoWeb\InfoflotApi\Builders\NewsId;
 use CryptoWeb\InfoflotApi\Builders\OnboardServices;
@@ -344,5 +345,10 @@ class Factory
         } else {
             return (new SuggestionTypesId($this->client))->id($id);
         }
+    }
+
+    public function idTypes(): BuilderInterface
+    {
+        return new IdTypes($this->client);
     }
 }
