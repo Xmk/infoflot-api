@@ -42,6 +42,10 @@ use CryptoWeb\InfoflotApi\Builders\ShipsActive;
 use CryptoWeb\InfoflotApi\Builders\ShipsActiveId;
 use CryptoWeb\InfoflotApi\Builders\ShipsId;
 use CryptoWeb\InfoflotApi\Builders\ShipsMenu;
+use CryptoWeb\InfoflotApi\Builders\Suggestions;
+use CryptoWeb\InfoflotApi\Builders\SuggestionsId;
+use CryptoWeb\InfoflotApi\Builders\SuggestionTypes;
+use CryptoWeb\InfoflotApi\Builders\SuggestionTypesId;
 use CryptoWeb\InfoflotApi\Contracts\BuilderInterface;
 
 class Factory
@@ -313,6 +317,32 @@ class Factory
             return (new RequestsId($this->client))->id($id);
         } else {
             return new Requests($this->client);
+        }
+    }
+
+    /**
+     * @see https://restapi.infoflot.com/docs/suggestions
+     * @see https://restapi.infoflot.com/docs/suggestions-id
+     */
+    public function suggestions(?int $id = null): BuilderInterface
+    {
+        if (is_null($id)) {
+            return new Suggestions($this->client);
+        } else {
+            return (new SuggestionsId($this->client))->id($id);
+        }
+    }
+
+    /**
+     * @see https://restapi.infoflot.com/docs/suggestion-types
+     * @see https://restapi.infoflot.com/docs/suggestion-types-id
+     */
+    public function suggestionTypes(?int $id = null): BuilderInterface
+    {
+        if (is_null($id)) {
+            return new SuggestionTypes($this->client);
+        } else {
+            return (new SuggestionTypesId($this->client))->id($id);
         }
     }
 }
