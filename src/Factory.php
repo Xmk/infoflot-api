@@ -16,6 +16,8 @@ use CryptoWeb\InfoflotApi\Builders\Cruises;
 use CryptoWeb\InfoflotApi\Builders\CruisesId;
 use CryptoWeb\InfoflotApi\Builders\Currencies;
 use CryptoWeb\InfoflotApi\Builders\CurrenciesId;
+use CryptoWeb\InfoflotApi\Builders\Discounts;
+use CryptoWeb\InfoflotApi\Builders\DiscountsId;
 use CryptoWeb\InfoflotApi\Builders\News;
 use CryptoWeb\InfoflotApi\Builders\NewsId;
 use CryptoWeb\InfoflotApi\Builders\OnboardServices;
@@ -96,6 +98,19 @@ class Factory
             return (new CruisesId($this->client))->id($id);
         } else {
             return new Cruises($this->client);
+        }
+    }
+
+    /**
+     * @see https://restapi.infoflot.com/docs/discounts
+     * @see https://restapi.infoflot.com/docs/discounts-id
+     */
+    public function discounts(?int $id = null): BuilderInterface
+    {
+        if ($id) {
+            return (new DiscountsId($this->client))->id($id);
+        } else {
+            return new Discounts($this->client);
         }
     }
 
