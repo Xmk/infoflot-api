@@ -22,6 +22,8 @@ use CryptoWeb\InfoflotApi\Builders\News;
 use CryptoWeb\InfoflotApi\Builders\NewsId;
 use CryptoWeb\InfoflotApi\Builders\OnboardServices;
 use CryptoWeb\InfoflotApi\Builders\OnboardServicesId;
+use CryptoWeb\InfoflotApi\Builders\PointsInRoutes;
+use CryptoWeb\InfoflotApi\Builders\PointsInRoutesId;
 use CryptoWeb\InfoflotApi\Builders\PopularRoutes;
 use CryptoWeb\InfoflotApi\Builders\PopularRoutesId;
 use CryptoWeb\InfoflotApi\Builders\Ports;
@@ -273,6 +275,19 @@ class Factory
     public function shipsMenu(): BuilderInterface
     {
         return new ShipsMenu($this->client);
+    }
+
+    /**
+     * @see https://restapi.infoflot.com/docs/points-in-routes
+     * @see https://restapi.infoflot.com/docs/points-in-routes-id
+     */
+    public function pointsInRoutes(?int $id = null): BuilderInterface
+    {
+        if ($id) {
+            return (new PointsInRoutesId($this->client))->id($id);
+        } else {
+            return new PointsInRoutes($this->client);
+        }
     }
 
     /**
