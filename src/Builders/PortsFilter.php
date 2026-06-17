@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class PortsFilter extends Builder
 {
-	protected $urn = 'ports/filter/:filter';
+    protected $urn = 'ports/filter/:filter';
 }

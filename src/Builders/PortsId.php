@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class PortsId extends Builder
 {
-	protected $urn = 'ports/:id';
+    protected $urn = 'ports/:id';
 }

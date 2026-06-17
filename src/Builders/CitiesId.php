@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class CitiesId extends Builder
 {
-	protected $urn = 'cities/:id';
+    protected $urn = 'cities/:id';
 }

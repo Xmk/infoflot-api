@@ -6,9 +6,10 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class Requests extends Builder
 {
-	protected $urn = 'requests';
-	protected $available_params = [
-		'limit',
-		'page',
-	];
+    protected $urn = 'requests';
+
+    protected $available_params = [
+        'limit',
+        'page',
+    ];
 }

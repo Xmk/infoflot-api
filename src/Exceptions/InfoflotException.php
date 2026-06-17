@@ -2,4 +2,6 @@
 
 namespace CryptoWeb\InfoflotApi\Exceptions;
 
-abstract class InfoflotException extends \Exception {}
+abstract class InfoflotException extends \Exception
+{
+}

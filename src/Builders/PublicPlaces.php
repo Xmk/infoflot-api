@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class PublicPlaces extends Builder
 {
-	protected $urn = 'public-places';
+    protected $urn = 'public-places';
 }

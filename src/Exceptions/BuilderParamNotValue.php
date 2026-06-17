@@ -2,4 +2,6 @@
 
 namespace CryptoWeb\InfoflotApi\Exceptions;
 
-class BuilderParamNotValue extends InfoflotException {}
+class BuilderParamNotValue extends InfoflotException
+{
+}

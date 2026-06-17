@@ -4,5 +4,5 @@ namespace CryptoWeb\InfoflotApi\Enums;
 
 enum FilterEnum: string
 {
-	case DEPARTURE_PORTS = 'departurePorts';
+    case DEPARTURE_PORTS = 'departurePorts';
 }
