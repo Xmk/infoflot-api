@@ -6,9 +6,10 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class News extends Builder
 {
-	protected $urn = 'news';
-	protected $available_params = [
-		'limit',
-		'offers',
-	];
+    protected $urn = 'news';
+
+    protected $available_params = [
+        'limit',
+        'offers',
+    ];
 }

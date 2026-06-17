@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class OnboardServices extends Builder
 {
-	protected $urn = 'onboard-services';
+    protected $urn = 'onboard-services';
 }

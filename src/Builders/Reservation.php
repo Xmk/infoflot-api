@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class Reservation extends Builder
 {
-	protected $urn = 'reservation/:cruiseId/:startDate';
+    protected $urn = 'reservation/:cruiseId/:startDate';
 }

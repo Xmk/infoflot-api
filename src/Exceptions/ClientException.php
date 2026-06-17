@@ -2,4 +2,6 @@
 
 namespace CryptoWeb\InfoflotApi\Exceptions;
 
-class ClientException extends InfoflotException {}
+class ClientException extends InfoflotException
+{
+}

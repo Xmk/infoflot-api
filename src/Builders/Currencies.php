@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class Currencies extends Builder
 {
-	protected $urn = 'currencies';
+    protected $urn = 'currencies';
 }

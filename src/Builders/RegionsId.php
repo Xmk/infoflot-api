@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class RegionsId extends Builder
 {
-	protected $urn = 'regions/:id';
+    protected $urn = 'regions/:id';
 }

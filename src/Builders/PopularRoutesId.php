@@ -6,5 +6,5 @@ use CryptoWeb\InfoflotApi\Builder;
 
 class PopularRoutesId extends Builder
 {
-	protected $urn = 'popular-routes/:id';
+    protected $urn = 'popular-routes/:id';
 }
