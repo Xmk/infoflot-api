@@ -44,7 +44,7 @@ abstract class Builder implements BuilderInterface
 		throw new BuilderParamNotAvailable("Builder param {$name} not available");
 	}
 
-	protected function matchArgumentsFromUrl()
+	protected function matchArgumentsFromUrl(): array
 	{
 		preg_match_all('/:(\w+)/', $this->urn, $matches);
 
@@ -81,17 +81,17 @@ abstract class Builder implements BuilderInterface
 		return $this;
 	}
 
-	protected function getUrn()
+	protected function getUrn(): string
 	{
 		return strtr($this->urn, $this->arguments);
 	}
 
-	protected function getParams()
+	protected function getParams(): array
 	{
 		return array_filter($this->params);
 	}
 
-	protected function getResult()
+	protected function getResult(): array
 	{
 		return $this->extractArguments()
 					->buildParams()
@@ -99,7 +99,7 @@ abstract class Builder implements BuilderInterface
 					->request($this->getUrn(), $this->getParams());
 	}
 
-	protected function getRawParams()
+	protected function getRawParams(): array
 	{
 		return $this->query_params;
 	}
